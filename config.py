@@ -1,24 +1,30 @@
 # 导入redis
 from redis import StrictRedis
 
-class Config():
+
+class Config:
     DEBUG = None
-    SECRET_KEY = 'mfbLEofXEGaMrUeKb88TsEslrHL/4G+mJtvI5AdyaUGVSHcviqkzJg=='
-    # 指定session信息存储的位置
+    # 配置密钥
+    SECRET_KEY = '8RliMjy2/jPnzFwFcieYuUTa+vHgqPKHjfmXZEUmGQXVcGHywnGY7g=='
+    # 指定session信息储存的位置
     SESSION_TYPE = 'redis'
-    SESSION_REDIS = StrictRedis(host='127.0.0.1',port=6379)
+    SESSIOM_REDIS = StrictRedis(host='127.0.0.1',port=6379)
     SESSION_USE_SIGNER = True
-    PERMANENT_SESSION_LIFETIME = 88888
-    # 配置数据库的连接和动态跟踪修改
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:mysql@localhost/flask'
+    PERMANENT_SESSION_LIFETIME = 86400
+    # 配置数据库连接和动态追踪修改
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:mysql@localhost/info20'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+# 配置开发模式
 
-# 定义开发模式
+
 class DevelopmentConfig(Config):
     DEBUG = True
 
-# 定义生产模式
+
+# 配置生产模式
+
+
 class ProductionConfig(Config):
     DEBUG = False
 

@@ -7,8 +7,10 @@ class Config:
     # 配置密钥
     SECRET_KEY = 'tKoYO4p+G83JW5qnzVaTOzK/UV3QxD62y4rjbpF6LmxxIpgFjWOydA=='
     # 指定session信息存储的位置
+    SESSION_HOST = '127.0.0.1'
+    SESSION_PORT = 6379
     SESSION_TYPE = 'redis'
-    SESSION_REDIS = StrictRedis(host='127.0.0.1', port=6379)
+    SESSION_REDIS = StrictRedis(host=SESSION_HOST, port=SESSION_PORT)
     SESSION_USE_SIGNER = True
     PERMANENT_SESSION_LIFETIME = 86400
     # 配置数据库的连接和追踪修改

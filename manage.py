@@ -4,7 +4,7 @@ from flask_script import Manager
 # 导入迁移框架
 from flask_migrate import Migrate,MigrateCommand
 # 导入app,db，配置文件
-from info import create_app,db
+from info import create_app,db,models
 
 app = create_app('dev')
 
@@ -19,4 +19,5 @@ manager.add_command('db',MigrateCommand)
 
 
 if __name__ == '__main__':
+    print(app.url_map)
     manager.run()
